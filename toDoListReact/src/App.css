@@ -54,7 +54,7 @@ h1 span:nth-of-type(3){
     align-items:center;
 }
 
-input{
+#taskInput{
     height:85.72%;
     width:90%;
     padding:0px 2%;
@@ -64,7 +64,7 @@ input{
     transition:width 300ms,height 300ms;
 }
 
-input:focus{
+#taskInput:focus{
     width:95%;
     height:100%;
     transition:width 300ms,height 300ms;
@@ -84,4 +84,45 @@ input:focus{
     font-size:90%;
     width:80%;
     height:90%;
+}
+
+section:nth-of-type(2){
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+}
+
+section:nth-of-type(2)>div{
+    width:55%;
+}
+
+section:nth-of-type(2)>div>div{
+    width:100%;
+    height:50px;
+    margin-bottom:20px;
+    display:flex;
+}
+
+section:nth-of-type(2)>div>div>input{
+    width:8%;
+    margin:0px 2% 0px 0px;
+    border-radius:10px;
+}
+
+section:nth-of-type(2)>div>div>div{
+    background-color:white;
+    width:70%;
+    height:100%;
+    margin-right:2%;
+    border-radius:10px;
+}
+
+section:nth-of-type(2)>div>div button{
+    width:6%;
+    border-radius:10px;
+}
+
+img{
+    width:100%;
+    height:100%;
 }
