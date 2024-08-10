@@ -1,0 +1,87 @@
+body{
+    background:linear-gradient(yellow,pink);
+    height:100vh;
+    margin:0px;
+}
+
+h1{
+    font-family:cursive;
+    font-size:4em;
+    text-align:center;
+    padding:30px;
+}
+
+h1 span:nth-of-type(1){
+    color:blue;
+}
+
+h1 span:nth-of-type(2),h1 span:nth-of-type(4){
+    color:chocolate;
+}
+
+h1 span:nth-of-type(3){
+    color:violet;
+}
+
+#inputSection{
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#inputSection>div{
+    width:65%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#inputSection div div:nth-of-type(1){
+    width:85.75%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#inputSection div div:nth-of-type(2){
+    width:14.25%;
+    height:85.72%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+input{
+    height:85.72%;
+    width:90%;
+    padding:0px 2%;
+    border:0px solid;
+    outline:none;
+    border-radius:10px;
+    transition:width 300ms,height 300ms;
+}
+
+input:focus{
+    width:95%;
+    height:100%;
+    transition:width 300ms,height 300ms;
+}
+
+#idButton{
+    font-size:100%;
+    font-family:cursive;
+    font-style:normal;
+    font-weight:100;
+    width:90%;
+    height:100%;
+    border-radius:10px;
+}
+
+#idButton:active{
+    font-size:90%;
+    width:80%;
+    height:90%;
+}
