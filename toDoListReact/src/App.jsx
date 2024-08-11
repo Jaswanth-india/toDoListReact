@@ -2,13 +2,27 @@ import "./App.css"
 import { useState } from "react";
 import Task from "./components/Task.jsx"
 
-function App(){
-    let [Tasks,taskMethod]=useState([]);
-    let inputValue;
+export let Tasks=[];
+export let taskMethod;
+let count=0;
+export let totalTasks;
+let inputValue;
+
+export function App(){
+    [totalTasks,taskMethod]=useState(0);
     function inputData(e){
         inputValue=e.target.value;
     }
-    function taskAdder(){}
+    function taskAdder(){
+        if(inputValue){
+            Tasks[Tasks.length]={
+                id:count,
+                taskName:inputValue
+            }
+            count++;
+            taskMethod(totalTasks+1);;
+        }
+    }
     return (
     <>
         <article>
@@ -17,7 +31,7 @@ function App(){
         <section id="inputSection">
             <div>
                 <div>
-                    <input id="taskInput" placeholder="E.g: Meeting with Kiran" type="text" onChange={(e)=>{inputData(e)}}/>
+                    <input id="taskInput" placeholder="E.g: Meeting with Kiran" type="text" onInput={(e)=>{inputData(e)}}/>
                 </div>
                 <div>
                     <button id="idButton" onClick={taskAdder}>ADD</button>
@@ -26,11 +40,17 @@ function App(){
         </section>
         <section>
             <div>
-            <Task/>
+            {Tasks.filter((task)=>{
+                    if(task){
+                        return true
+                    }
+                    ;return false;
+                }).map((task)=>
+                    <Task key={task.id} content={task}/>
+                )
+            }
             </div>
         </section>
     </>
     )
 }
-
-export default App;
