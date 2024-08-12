@@ -1,6 +1,7 @@
 import "./App.css"
 import { useState } from "react";
-import Task from "./components/Task.jsx"
+import {Task,updateProps} from "./components/Task.jsx"
+import Header from "./components/Header.jsx"
 
 export let Tasks=[];
 export let taskMethod;
@@ -23,11 +24,15 @@ export function App(){
             taskMethod(totalTasks+1);;
         }
     }
+    function updatePropsFunc(e){
+        e.target.style.display="none";
+        e.target.parentNode.children[0].style.display="block";
+        Tasks[updateProps.content.id].taskName=inputValue;
+        taskMethod(totalTasks+1);
+    }
     return (
     <>
-        <article>
-            <h1><span>To</span><span>-</span><span>Do</span><span> List</span></h1>
-        </article>
+        <Header/>
         <section id="inputSection">
             <div>
                 <div>
@@ -35,6 +40,7 @@ export function App(){
                 </div>
                 <div>
                     <button id="idButton" onClick={taskAdder}>ADD</button>
+                    <button id="updateButton" onClick={(e)=>{updatePropsFunc(e)}}>UPDATE</button>
                 </div>
             </div>
         </section>
