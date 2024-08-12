@@ -21,6 +21,7 @@ export function Task(props){
         taskMethod(totalTasks-1);
     }
     function editFunc(e){
+        updateProps=props
         if(e.target.src){
             editValue=e.target.parentNode.parentNode.children[1].innerHTML;
             e.target.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[0].children[0].children[0].value=editValue;
